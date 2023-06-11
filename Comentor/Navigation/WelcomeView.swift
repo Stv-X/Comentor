@@ -17,6 +17,7 @@ struct WelcomeView: View {
                 .opacity(0.7)
             Text("Welcome to Comentor")
                 .font(.largeTitle)
+                .foregroundStyle(.secondary)
                 .bold()
                 .fontWidth(.compressed)
         }

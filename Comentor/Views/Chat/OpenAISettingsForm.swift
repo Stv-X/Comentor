@@ -77,20 +77,10 @@ struct OpenAISettingsForm: View {
                 
                 Section("OpenAI API Key") {
                     SecureField("sk-...", text: $aiApiKey)
-                    Button {
-                        
-                    } label: {
-                        Text("Validate")
-                    }
                 }
                 
                 Section("Customized API Domain") {
                     TextField("example.com", text: $aiApiHost)
-                    Button {
-                        
-                    } label: {
-                        Text("Validate")
-                    }
                 }
                 
                 Section("Advanced") {

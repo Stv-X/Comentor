@@ -12,6 +12,8 @@
 		AA2228E22A337AAD00B98129 /* MarkdownText in Frameworks */ = {isa = PBXBuildFile; productRef = AA2228E12A337AAD00B98129 /* MarkdownText */; };
 		AA2228E42A337AEB00B98129 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2228E32A337AEB00B98129 /* StringExtensions.swift */; };
 		AA2228E62A337B7100B98129 /* MdExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2228E52A337B7100B98129 /* MdExtensions.swift */; };
+		AA2B23862A36272D00126EA6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AA2B23842A36272D00126EA6 /* LICENSE */; };
+		AA2B23872A36272D00126EA6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA2B23852A36272D00126EA6 /* README.md */; };
 		AA7A78A52A35E87200A3ECE0 /* RoadmapDetailStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A78A42A35E87200A3ECE0 /* RoadmapDetailStepCell.swift */; };
 		AA7A78A72A35EEB100A3ECE0 /* OpenAISettingsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A78A62A35EEB100A3ECE0 /* OpenAISettingsForm.swift */; };
 		AA898E362A349BBD00FE0C05 /* SearchCategoryGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA898E352A349BBD00FE0C05 /* SearchCategoryGridItem.swift */; };
@@ -56,6 +58,8 @@
 		AA2228DD2A337A6D00B98129 /* ChatBubbleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleShape.swift; sourceTree = "<group>"; };
 		AA2228E32A337AEB00B98129 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		AA2228E52A337B7100B98129 /* MdExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MdExtensions.swift; sourceTree = "<group>"; };
+		AA2B23842A36272D00126EA6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		AA2B23852A36272D00126EA6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AA7A78A42A35E87200A3ECE0 /* RoadmapDetailStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadmapDetailStepCell.swift; sourceTree = "<group>"; };
 		AA7A78A62A35EEB100A3ECE0 /* OpenAISettingsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAISettingsForm.swift; sourceTree = "<group>"; };
 		AA898E352A349BBD00FE0C05 /* SearchCategoryGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryGridItem.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 		AABBBDC52A33358100427BC6 = {
 			isa = PBXGroup;
 			children = (
+				AA2B23842A36272D00126EA6 /* LICENSE */,
+				AA2B23852A36272D00126EA6 /* README.md */,
 				AABBBDD02A33358200427BC6 /* Comentor */,
 				AABBBDCF2A33358100427BC6 /* Products */,
 			);
@@ -313,7 +319,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2B23862A36272D00126EA6 /* LICENSE in Resources */,
 				AABBBDDC2A33358400427BC6 /* Preview Assets.xcassets in Resources */,
+				AA2B23872A36272D00126EA6 /* README.md in Resources */,
 				AABBBDD82A33358400427BC6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,15 +495,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Comentor-Neue/Comentor_Neue.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Comentor-Neue/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Comentor/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GYXTCSZPZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Comentor-Neue/Info.plist";
+				INFOPLIST_FILE = Comentor/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -512,7 +520,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stv.x.Comentor-Neue";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stv.x.Comentor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -527,15 +535,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Comentor-Neue/Comentor_Neue.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Comentor-Neue/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Comentor/Preview Content\"";
 				DEVELOPMENT_TEAM = 8GYXTCSZPZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Comentor-Neue/Info.plist";
+				INFOPLIST_FILE = Comentor/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -552,7 +560,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.stv.x.Comentor-Neue";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stv.x.Comentor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
