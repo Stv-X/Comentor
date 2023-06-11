@@ -3,7 +3,7 @@
 ![ios](https://img.shields.io/badge/iOS-0C62C7)
 # Comentor
 
-Comentor is an open-source app that allows users to chat with AI-powered chatbot and generate personalized study roadmaps based on the conversation. The app uses OpenAI's GPT to power the chatbot and saves the study roadmap locally for easy access.
+Comentor is an open-source app that allows you to chat with AI-powered chatbot and generate personalized study roadmaps based on the conversation. The app uses OpenAI's GPT to power the chatbot and saves the study roadmap locally for easy access.
 
 ## Features
 
