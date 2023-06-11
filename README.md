@@ -13,7 +13,7 @@ Comentor is an open-source app that allows users to chat with AI-powered chatbot
 
 ## Requirements
 
-- iOS 16, iPadOS 16, macOS 13 Ventura or later
+- iOS 17, iPadOS 17, macOS 14 Sonoma or later
 - OpenAI API key
 
 ## Installation
