@@ -1,0 +1,68 @@
+{
+  "pins" : [
+    {
+      "identity" : "markdowntext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shaps80/MarkdownText.git",
+      "state" : {
+        "revision" : "c5f5e3e7d2de5dbccd7756d6b4b3739fdf427c33",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "openai",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MacPaw/OpenAI.git",
+      "state" : {
+        "revision" : "4da423fe637a628ebee8f214217a9e96060a5222",
+        "version" : "0.2.1"
+      }
+    },
+    {
+      "identity" : "swift-cmark",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shaps80/swift-cmark.git",
+      "state" : {
+        "revision" : "476f7b4fcf12eba381b4aaed8987006fd8fcec9c",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "swift-markdown",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shaps80/swift-markdown",
+      "state" : {
+        "revision" : "83188dee2dbccfa70124c56055dd0b759d3e4ec3",
+        "version" : "0.3.0"
+      }
+    },
+    {
+      "identity" : "swiftbackports",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shaps80/SwiftBackports",
+      "state" : {
+        "revision" : "fafbeabf78b7e364abbbb7565cdfeee42af16211",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swiftuibackports",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shaps80/SwiftUIBackports",
+      "state" : {
+        "revision" : "4cf8f63c9bb14edfd882a8f82f520f801fc1c441",
+        "version" : "2.7.0"
+      }
+    },
+    {
+      "identity" : "yams",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jpsim/Yams.git",
+      "state" : {
+        "revision" : "f47ba4838c30dbd59998a4e4c87ab620ff959e8a",
+        "version" : "5.0.5"
+      }
+    }
+  ],
+  "version" : 2
+}
