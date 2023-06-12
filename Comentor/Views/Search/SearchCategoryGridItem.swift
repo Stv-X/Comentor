@@ -16,7 +16,7 @@ struct SearchCategoryGridItem: View {
     
     @Environment(\.colorScheme) private var colorScheme
     
-    @State var category: SearchCategory
+    @State var selection: SearchCategory
     
     @State private var pitch: CGFloat = 0.0
     @State private var roll: CGFloat = 0.0
@@ -29,16 +29,16 @@ struct SearchCategoryGridItem: View {
     var body: some View {
         NavigationLink {
             NavigationStack {
-                SearchCategoryDetail(selection: category)
+                SearchCategoryDetail(selection: selection)
             }
         } label: {
             GeometryReader { geometry in
                 ZStack {
-                    LinearGradient(colors: [category.color.complementaryColor, category.color],
+                    LinearGradient(colors: [selection.color.complementaryColor, selection.color],
                                    startPoint: colorScheme == .light ? .top : .bottom,
                                    endPoint: colorScheme == .light ? .bottom : .top)
                     
-                    Image(systemName: category.image)
+                    Image(systemName: selection.image)
                         .foregroundColor(.black)
                         .font(.system(size: 80))
                         .imageScale(.large)
@@ -60,7 +60,7 @@ struct SearchCategoryGridItem: View {
                         .offset(x: 20 + roll * 5, y: pitch * 5)
 #endif
                     
-                    Image(systemName: category.image)
+                    Image(systemName: selection.image)
                         .foregroundStyle(
                             LinearGradient(colors: [.black.opacity(0.5), .black],
                                            startPoint: .bottom,
@@ -92,12 +92,12 @@ struct SearchCategoryGridItem: View {
             }
             .frame(minHeight: 133)
         }
-        .buttonStyle(SearchCategoryItemButtonStyle(title: category.category.rawValue.capitalized))
+        .buttonStyle(SearchCategoryItemButtonStyle(title: selection.category.localizedLabel))
         .padding(.horizontal, 5)
     }
     
     struct SearchCategoryItemButtonStyle: ButtonStyle {
-        @State var title: String
+        @State var title: LocalizedStringKey
         func makeBody(configuration: Configuration) -> some View {
             ZStack {
                 configuration.label
@@ -106,7 +106,7 @@ struct SearchCategoryGridItem: View {
                 VStack {
                     Spacer()
                     HStack {
-                        Text(LocalizedStringKey(title))
+                        Text(title)
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding(10)

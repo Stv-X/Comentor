@@ -27,7 +27,7 @@ struct SearchCategoryGrid: View {
                                      count: columnCount()),
                       spacing: 10) {
                 ForEach(searchCategoryItems) { item in
-                    SearchCategoryGridItem(category: item)
+                    SearchCategoryGridItem(selection: item)
                 }
             }
                       .padding(.horizontal, 6)

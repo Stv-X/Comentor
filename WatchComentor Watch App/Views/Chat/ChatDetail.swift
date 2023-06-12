@@ -67,7 +67,7 @@ struct ChatDetail: View {
                 .disabled(chat.dialogues.isEmpty || isRequestingAnswer)
             }
         }
-        .alert("Erase All Messages?",
+        .alert("Erase All Messages",
                isPresented: $deletingMessages) {
             Button(role: .destructive) {
                 deleteAllDialogues()

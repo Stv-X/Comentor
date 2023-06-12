@@ -50,6 +50,27 @@
         }
       }
     },
+    "art" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "艺术"
+          }
+        }
+      }
+    },
+    "Ask anything" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "随便问问"
+          }
+        }
+      }
+    },
     "Ask as your wish" : {
       "localizations" : {
         "zh-Hans" : {
@@ -60,12 +81,34 @@
         }
       }
     },
+    "biology" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "生物"
+          }
+        }
+      }
+    },
     "Browse Categories" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "类别浏览"
+          }
+        }
+      }
+    },
+    "business" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "商业"
           }
         }
       }
@@ -95,7 +138,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "聊天的标题必须唯一"
+            "value" : "标题已被占用。"
           }
         }
       }
@@ -106,6 +149,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "与 Comentor AI 聊天以生成学习路线。"
+          }
+        }
+      }
+    },
+    "coding" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "编程"
           }
         }
       }
@@ -125,7 +179,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comentor 的智能与风靡全球的生成式人工智能 ChatGPT 采用相同的技术，依托于 OpenAI API。当前版本的 Comentor 需要您自行提供 API Key 方可正常使用全部功能。"
+            "value" : "Comentor 的智能与风靡全球的生成式人工智能 ChatGPT 采用相同的技术，依托于 OpenAI API。当前版本的 Comentor 需要您自行提供 API 密钥方可正常使用全部功能。"
           }
         }
       }
@@ -210,7 +264,7 @@
         }
       }
     },
-    "Delete this Roamap" : {
+    "Delete this Roadmap" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -250,6 +304,16 @@
         }
       }
     },
+    "Erase" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "清除"
+          }
+        }
+      }
+    },
     "Erase All Messages" : {
       "localizations" : {
         "zh-Hans" : {
@@ -280,12 +344,23 @@
         }
       }
     },
-    "Generate Roamap" : {
+    "Generate Roadmap" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "生成学习路线"
+          }
+        }
+      }
+    },
+    "health" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "健康"
           }
         }
       }
@@ -296,6 +371,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "不支持的聊天标题"
+          }
+        }
+      }
+    },
+    "language" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "语言"
+          }
+        }
+      }
+    },
+    "math" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数学"
+          }
+        }
+      }
+    },
+    "Me" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "我"
           }
         }
       }
@@ -335,7 +442,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "你创建的新聊天会在这里显示"
+            "value" : "你创建的新聊天会在这里显示。"
           }
         }
       }
@@ -390,6 +497,17 @@
         }
       }
     },
+    "philosophy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "哲学"
+          }
+        }
+      }
+    },
     "Pin" : {
       "localizations" : {
         "zh-Hans" : {
@@ -430,6 +548,36 @@
         }
       }
     },
+    "Resend" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重发"
+          }
+        }
+      }
+    },
+    "Resend?" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重发？"
+          }
+        }
+      }
+    },
+    "Search" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "搜索"
+          }
+        }
+      }
+    },
     "Select a chat" : {
       "localizations" : {
         "zh-Hans" : {
@@ -446,6 +594,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "选择一个学习路线"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置"
           }
         }
       }
@@ -470,6 +628,17 @@
         }
       }
     },
+    "sport" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "运动"
+          }
+        }
+      }
+    },
     "steps" : {
       "localizations" : {
         "zh-Hans" : {
@@ -490,12 +659,33 @@
         }
       }
     },
+    "Study Now" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "现在就学"
+          }
+        }
+      }
+    },
     "Tags" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "标签"
+          }
+        }
+      }
+    },
+    "technology" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "科技"
           }
         }
       }
@@ -547,6 +737,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "昨天"
+          }
+        }
+      }
+    },
+    "You cannot undo this action." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "改操作不能被撤销。"
           }
         }
       }

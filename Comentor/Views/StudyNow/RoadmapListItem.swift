@@ -110,7 +110,7 @@ struct RoadmapListItem: View {
                             Button(role: .destructive) {
                                 deleteRoadmap()
                             } label: {
-                                Label("Delete this Roamap", systemImage: "trash")
+                                Label("Delete this Roadmap", systemImage: "trash")
                             }
                         } label: {
                             Label("Delete", systemImage: "trash")

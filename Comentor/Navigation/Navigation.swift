@@ -26,8 +26,8 @@ struct NavigationItem: Identifiable, CaseIterable, Hashable, Equatable {
             return AnyView(WelcomeView())
         }
     }
-    init(title: String, image: String) {
-        self.title = title
+    init(title: LocalizedStringResource, image: String) {
+        self.title = String(localized: title)
         self.image = image
     }
 }

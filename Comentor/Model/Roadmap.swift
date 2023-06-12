@@ -127,6 +127,10 @@ extension StudyCategory {
         }
     }
     
+    var localizedLabel: LocalizedStringKey {
+        return LocalizedStringKey(stringLiteral: self.rawValue)
+    }
+    
     static func random() -> StudyCategory {
         let allValues: [StudyCategory] = [.coding, .language, .health, .art, .technology, .math, .biology, .philosophy, .business, .sport]
         let randomIndex = Int(arc4random_uniform(UInt32(allValues.count)))

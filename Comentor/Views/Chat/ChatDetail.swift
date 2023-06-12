@@ -110,7 +110,7 @@ struct ChatDetail: View {
                         }
                         
                     } label: {
-                        Label("Generate Roamap", systemImage: "wand.and.stars")
+                        Label("Generate Roadmap", systemImage: "wand.and.stars")
                     }
                     .disabled(isRequestingAnswer || isGeneratingRoadmap || chat.roadmap != nil || chat.dialogues.isEmpty)
                 }

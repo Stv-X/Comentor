@@ -16,15 +16,15 @@ struct StudyNowView: View {
     private var tags: [Tag]
     
     var body: some View {
-        ScrollView {
-            if roadmaps.isEmpty {
-                ContentUnavailableView {
-                    Label("No Roadmaps", systemImage: "fossil.shell.fill")
-                } description: {
-                    Text("Chat with Comentor AI Robot to generate Study Roadmaps.")
-                }
-                .symbolEffect(.pulse, options: .speed(0.3))
-            } else {
+        if roadmaps.isEmpty {
+            ContentUnavailableView {
+                Label("No Roadmaps", systemImage: "fossil.shell.fill")
+            } description: {
+                Text("Chat with Comentor AI Robot to generate Study Roadmaps.")
+            }
+            .symbolEffect(.pulse, options: .speed(0.3))
+        } else {
+            ScrollView {
                 if !tags.isEmpty {
                     TagList(tags: tags)
                     Divider()
