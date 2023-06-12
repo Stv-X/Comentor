@@ -1,6 +1,6 @@
 //
 //  StudyNowView.swift
-//  Comentor-Neue
+//  Comentor
 //
 //  Created by 徐嗣苗 on 2023/6/9.
 //
@@ -16,16 +16,15 @@ struct StudyNowView: View {
     private var tags: [Tag]
     
     var body: some View {
-        if roadmaps.isEmpty {
-            ContentUnavailableView {
-                Label("No Roadmaps", systemImage: "fossil.shell.fill")
-            } description: {
-                Text("Chat with Comentor AI Robot to generate Study Roadmaps.")
-            }
-            .symbolEffect(.pulse, options: .speed(0.3))
-            
-        } else {
-            ScrollView {
+        ScrollView {
+            if roadmaps.isEmpty {
+                ContentUnavailableView {
+                    Label("No Roadmaps", systemImage: "fossil.shell.fill")
+                } description: {
+                    Text("Chat with Comentor AI Robot to generate Study Roadmaps.")
+                }
+                .symbolEffect(.pulse, options: .speed(0.3))
+            } else {
                 if !tags.isEmpty {
                     TagList(tags: tags)
                     Divider()

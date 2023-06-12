@@ -1,16 +1,15 @@
 //
-//  Comentor_NeueApp.swift
-//  Comentor-Neue
+//  ComentorWatchApp.swift
+//  Comentor Watch App
 //
-//  Created by 徐嗣苗 on 2023/6/9.
+//  Created by 徐嗣苗 on 2023/6/12.
 //
 
 import SwiftUI
 import SwiftData
 
 @main
-struct Comentor_NeueApp: App {
-
+struct Comentor_Watch_App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -20,5 +19,4 @@ struct Comentor_NeueApp: App {
             isUndoEnabled: true
         )
     }
-    
 }

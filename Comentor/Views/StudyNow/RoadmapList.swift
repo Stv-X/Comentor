@@ -1,6 +1,6 @@
 //
 //  RoadmapList.swift
-//  Comentor-Neue
+//  Comentor
 //
 //  Created by 徐嗣苗 on 2023/6/10.
 //
@@ -27,11 +27,12 @@ struct RoadmapList: View {
                 } header: {
                     HStack {
                         Text("Pinned")
-                            .bold()
-                            .font(.title3)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(Color.secondary)
+                            .padding([.top, .leading])
                         Spacer()
                     }
-                    .padding(.horizontal)
                 }
                 Divider()
             }

@@ -1,8 +1,8 @@
 //
 //  ChatView.swift
-//  Comentor
+//  Comentor Watch App
 //
-//  Created by 徐嗣苗 on 2023/6/9.
+//  Created by 徐嗣苗 on 2023/6/12.
 //
 
 import SwiftUI
@@ -14,16 +14,12 @@ struct ChatView: View {
     @Query(sort: \.timestamp, order: .reverse)
     private var chats: [ComentorChat]
     
-    @State private var selection: ComentorChat?
-    
-    @State private var newChatTitle = ""
     @State private var showAddChat = false
+    @State private var newChatTitle = ""
     @State private var invalidTitle = false
     
-    @State private var showOpenAISettings = false
-    
     var body: some View {
-        List(selection: $selection) {
+        List {
             if chats.contains(where: { $0.isPinned }) {
                 Section("Pinned") {
                     ForEach(chats.filter({ $0.isPinned })) { chat in
@@ -41,8 +37,7 @@ struct ChatView: View {
                                         chat.isPinned.toggle()
                                     }
                                 } label: {
-                                    Label(chat.isPinned ? "Unpin" : "Pin",
-                                          systemImage: chat.isPinned ? "pin.slash.fill" : "pin.fill")
+                                    Label("Pin", systemImage: chat.isPinned ? "pin.slash.fill" : "pin.fill")
                                         .tint(.yellow)
                                 }
                             }
@@ -70,9 +65,8 @@ struct ChatView: View {
                     }
             }
         }
-        .listStyle(.plain)
+        .navigationTitle("Chat")
         
-        // No Chats
         .overlay {
             if chats.isEmpty {
                 ContentUnavailableView {
@@ -84,47 +78,39 @@ struct ChatView: View {
         }
         
         .toolbar {
-            ToolbarItem(placement: .primaryAction) {
+            ToolbarItem(placement: .confirmationAction) {
                 Button {
                     showAddChat = true
                 } label: {
                     Label("New Chat", systemImage: "plus")
                 }
             }
-            ToolbarItem {
-                Button {
-                    showOpenAISettings = true
-                } label: {
-                    Label("AI Settings", systemImage: "gear")
-                }
-            }
         }
-        .sheet(isPresented: $showOpenAISettings) {
-            OpenAISettingsForm(isPresented: $showOpenAISettings)
-        }
-        // New Chat Toast
-        .alert("New Chat",
-               isPresented: $showAddChat,
-               actions: {
-            TextField("Enter title here…", text: $newChatTitle)
-            Button("Add") {
-                withAnimation {
-                    if chats.contains(where: { $0.title == newChatTitle}) {
-                        invalidTitle = true
-                    } else {
-                        let newChat = ComentorChat(newChatTitle)
-                        modelContext.insert(newChat)
-                        newChatTitle = ""
-                        selection = chats.first(where: {$0.title == newChat.title})
+        
+        .sheet(isPresented: $showAddChat){
+            VStack {
+                Text("New Chat")
+                TextField("Enter title here…", text: $newChatTitle)
+                Button("Add") {
+                    withAnimation {
+                        if chats.contains(where: { $0.title == newChatTitle}) {
+                            invalidTitle = true
+                        } else {
+                            let newChat = ComentorChat(newChatTitle)
+                            modelContext.insert(newChat)
+                            newChatTitle = ""
+                        }
                     }
+                    showAddChat = false
                 }
+                .tint(.accentColor)
+                .disabled(newChatTitle.isEmpty)
             }
-            .disabled(newChatTitle.isEmpty)
-            
-            Button("Cancel", role: .cancel) {
+            .onDisappear {
+                showAddChat = false
                 newChatTitle = ""
             }
-        })
+        }
         
         // Invalid Chat Title
         .alert("Invalid Chat Title",
@@ -137,23 +123,14 @@ struct ChatView: View {
                message: {
             Text("Chat title should be unique.")
         })
-        
-        
-        
     }
+    
     private func deleteChat(_ chat: ComentorChat) {
-        if chat.objectID == selection?.objectID {
-            selection = nil
-        }
         modelContext.delete(chat)
         try! modelContext.save()
     }
-    
 }
 
 #Preview {
-    NavigationStack {
-        ChatView()
-    }
-    .modelContainer(for: ComentorChat.self, inMemory: true)
+    ChatView()
 }

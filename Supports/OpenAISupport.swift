@@ -1,6 +1,6 @@
 //
 //  OpenAISupport.swift
-//  Comentor-Neue
+//  Comentor
 //
 //  Created by 徐嗣苗 on 2023/6/11.
 //
@@ -33,8 +33,6 @@ func sendAndReceive(with dialogues: [Dialogue]) async -> (String, Bool) {
     var currentReceivedMessage = ""
     UserDefaults.standard.set(currentReceivedMessage, forKey: "CurrentMessage")
     
-    
-    
     do {
         let(openAI, query) = setupOpenAI(with: dialogues, for: .chat)
         for try await result in openAI.chatsStream(query: query) {
@@ -51,17 +49,14 @@ func sendAndReceive(with dialogues: [Dialogue]) async -> (String, Bool) {
         // 如果发生错误，则返回错误信息
         return (error.localizedDescription, false)
     }
-    
 }
 
 func roadmapYam(_ dialogues: [Dialogue]) async -> (String, Bool) {
-    
-    
-    
     do {
         let(openAI, query) = setupOpenAI(with: dialogues, for: .roadmap)
         let result = try await openAI.chats(query: query)
         let response = result.choices.first!.message.content
+        
         if let formattedResponse = response.formattedYAML() {
             print(formattedResponse)
             return (formattedResponse, true)
@@ -73,45 +68,39 @@ func roadmapYam(_ dialogues: [Dialogue]) async -> (String, Bool) {
     }
 }
 
-enum OpenAIUsage {
-    case chat, roadmap
-}
-
 func setupOpenAI(with dialogues: [Dialogue], for usage: OpenAIUsage) -> (OpenAI, ChatQuery) {
     var dialogueBuffer: [Dialogue] = []
-
+    
     let contextCount: Int = UserDefaults.standard.integer(forKey: "ContextCount")
-
+    
     var maxDialogueCount = 4
     switch usage {
-        case .chat:
+    case .chat:
         maxDialogueCount = contextCount == 0 ? 4 : contextCount
-        case .roadmap:
+    case .roadmap:
         maxDialogueCount = max(10, contextCount)
     }
-
+    
     if dialogues.count < 2 || !dialogues[dialogues.count - 2].success {
         dialogueBuffer = [dialogues.last].compactMap { $0 }
     } else {
         let recentItems = dialogues.suffix(maxDialogueCount)
         dialogueBuffer = Array(recentItems)
     }
-
+    
     var messages: [Chat] = []
     
     for dialogue in dialogueBuffer {
         messages.append(Chat(role: .user, content: dialogue.ask))
-        switch usage {
-            case .chat:
-            if dialogue != dialogueBuffer.last {
+        if usage == .chat && dialogue != dialogueBuffer.last {
             messages.append(Chat(role: .assistant, content: String(dialogue.answer)))
-            }
-            case .roadmap:
-            messages.append(Chat(role: .assistant, content: String(dialogue.answer)))
-
         }
     }
-
+    
+    if usage == .roadmap {
+        messages.append(Chat(role: .system, content: generationPrompt))
+    }
+    
     let aiModel: Model = UserDefaults.standard.string(forKey: "AIModel") ?? Model.gpt3_5Turbo
     let aiTemperature: Double = UserDefaults.standard.double(forKey: "AITemperature")
     let query = ChatQuery(model: aiModel, messages: messages, temperature: aiTemperature)
@@ -119,20 +108,8 @@ func setupOpenAI(with dialogues: [Dialogue], for usage: OpenAIUsage) -> (OpenAI,
     let apiHost: String = UserDefaults.standard.string(forKey: "APIHost") ?? "api.openai.com"
     let openAIConfig = apiHost == "" ? OpenAI.Configuration(token: apiKey) : OpenAI.Configuration(token: apiKey, host: apiHost)
     let openAI = OpenAI(configuration: openAIConfig)
-
+    
     return (openAI, query)
-}
-
-extension String {
-    func formattedYAML() -> String? {
-        let str = self
-        guard str.hasPrefix("```yaml") && str.hasSuffix("```") else {
-            return nil
-        }
-        let startIndex = str.index(str.startIndex, offsetBy: 6)
-        let endIndex = str.index(str.endIndex, offsetBy: -3)
-        return String(str[startIndex..<endIndex])
-    }
 }
 
 public extension Model {
@@ -150,4 +127,20 @@ public extension Model {
 
 extension Model: Identifiable {
     public var id: String { self }
+}
+
+extension String {
+    func formattedYAML() -> String? {
+        let str = self
+        guard str.hasPrefix("```yaml") && str.hasSuffix("```") else {
+            return nil
+        }
+        let startIndex = str.index(str.startIndex, offsetBy: 6)
+        let endIndex = str.index(str.endIndex, offsetBy: -3)
+        return String(str[startIndex..<endIndex])
+    }
+}
+
+enum OpenAIUsage {
+    case chat, roadmap
 }

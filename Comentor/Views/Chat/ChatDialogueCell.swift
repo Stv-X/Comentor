@@ -1,6 +1,6 @@
 //
 //  ChatDialogueCell.swift
-//  Comentor-Neue
+//  Comentor
 //
 //  Created by 徐嗣苗 on 2023/6/9.
 //
@@ -50,7 +50,7 @@ struct ChatDialogueCell: View {
                     .comentorAnswerMarkdownStyle()
                     .animation(.spring, value: currentReceivedMessage)
             } else {
-                if dialogue.answer != "" {
+                if dialogue.answer != "" && dialogue.success {
                     MarkdownText(dialogue.answer)
                         .padding()
                         .background(.secondary.opacity(0.2))

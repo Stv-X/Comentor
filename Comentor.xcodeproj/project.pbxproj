@@ -14,6 +14,15 @@
 		AA2228E62A337B7100B98129 /* MdExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2228E52A337B7100B98129 /* MdExtensions.swift */; };
 		AA2B23862A36272D00126EA6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AA2B23842A36272D00126EA6 /* LICENSE */; };
 		AA2B23872A36272D00126EA6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA2B23852A36272D00126EA6 /* README.md */; };
+		AA2FEA662A3639F100D967D0 /* ChatDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2FEA652A3639F100D967D0 /* ChatDetail.swift */; };
+		AA2FEA672A363A4300D967D0 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9A10E32A35A4B600FCB156 /* DateExtensions.swift */; };
+		AA2FEA692A363C6C00D967D0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2FEA682A363C6C00D967D0 /* SettingsView.swift */; };
+		AA479EDD2A363178007A6F8A /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = AA479EDC2A363178007A6F8A /* OpenAI */; };
+		AA479EDE2A3631DD007A6F8A /* OpenAISupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9A10E52A35A4FA00FCB156 /* OpenAISupport.swift */; };
+		AA479EE22A363266007A6F8A /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA479EE12A363266007A6F8A /* ChatView.swift */; };
+		AA479EE42A363315007A6F8A /* ComentorChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA479EE32A363315007A6F8A /* ComentorChat.swift */; };
+		AA479EE62A363346007A6F8A /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA479EE52A363346007A6F8A /* Dialogue.swift */; };
+		AA479EEA2A3633C3007A6F8A /* ChatListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA479EE92A3633C3007A6F8A /* ChatListItem.swift */; };
 		AA7A78A52A35E87200A3ECE0 /* RoadmapDetailStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A78A42A35E87200A3ECE0 /* RoadmapDetailStepCell.swift */; };
 		AA7A78A72A35EEB100A3ECE0 /* OpenAISettingsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7A78A62A35EEB100A3ECE0 /* OpenAISettingsForm.swift */; };
 		AA898E362A349BBD00FE0C05 /* SearchCategoryGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA898E352A349BBD00FE0C05 /* SearchCategoryGridItem.swift */; };
@@ -31,7 +40,7 @@
 		AA9A10E62A35A4FA00FCB156 /* OpenAISupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9A10E52A35A4FA00FCB156 /* OpenAISupport.swift */; };
 		AA9A10E82A35A55800FCB156 /* RoadmapYamlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9A10E72A35A55800FCB156 /* RoadmapYamlParser.swift */; };
 		AA9A10EA2A35B1C900FCB156 /* RoadmapGenerationStatusToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9A10E92A35B1C900FCB156 /* RoadmapGenerationStatusToast.swift */; };
-		AABBBDD22A33358200427BC6 /* Comentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBBDD12A33358200427BC6 /* Comentor.swift */; };
+		AABBBDD22A33358200427BC6 /* ComentorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBBDD12A33358200427BC6 /* ComentorApp.swift */; };
 		AABBBDD62A33358200427BC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBBDD52A33358200427BC6 /* ContentView.swift */; };
 		AABBBDD82A33358400427BC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABBBDD72A33358400427BC6 /* Assets.xcassets */; };
 		AABBBDDC2A33358400427BC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AABBBDDB2A33358400427BC6 /* Preview Assets.xcassets */; };
@@ -51,12 +60,13 @@
 		AAD5D0402A3338A9005830D3 /* Roadmap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD5D03F2A3338A9005830D3 /* Roadmap.swift */; };
 		AAD5D0422A3338BB005830D3 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD5D0412A3338BB005830D3 /* Step.swift */; };
 		AAD5D0442A3338C5005830D3 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD5D0432A3338C5005830D3 /* Tag.swift */; };
-		AAD852562A362D83008B60C4 /* WatchComentorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD852552A362D83008B60C4 /* WatchComentorApp.swift */; };
+		AAD852562A362D83008B60C4 /* ComentorWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD852552A362D83008B60C4 /* ComentorWatchApp.swift */; };
 		AAD852582A362D83008B60C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD852572A362D83008B60C4 /* ContentView.swift */; };
 		AAD8525A2A362D85008B60C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD852592A362D85008B60C4 /* Assets.xcassets */; };
 		AAD8525D2A362D85008B60C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD8525C2A362D85008B60C4 /* Preview Assets.xcassets */; };
-		AAD852602A362D85008B60C4 /* WatchComentor Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AAD852532A362D83008B60C4 /* WatchComentor Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AAD852602A362D85008B60C4 /* Comentor.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AAD852532A362D83008B60C4 /* Comentor.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AAD852662A362E31008B60C4 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD852652A362E31008B60C4 /* UIExtensions.swift */; };
+		AADDD35C2A36CE3D00D36072 /* ChatDialogueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADDD35B2A36CE3D00D36072 /* ChatDialogueCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +86,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				AAD852602A362D85008B60C4 /* WatchComentor Watch App.app in Embed Watch Content */,
+				AAD852602A362D85008B60C4 /* Comentor.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +100,12 @@
 		AA2228E52A337B7100B98129 /* MdExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MdExtensions.swift; sourceTree = "<group>"; };
 		AA2B23842A36272D00126EA6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		AA2B23852A36272D00126EA6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AA2FEA652A3639F100D967D0 /* ChatDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetail.swift; sourceTree = "<group>"; };
+		AA2FEA682A363C6C00D967D0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AA479EE12A363266007A6F8A /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		AA479EE32A363315007A6F8A /* ComentorChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentorChat.swift; sourceTree = "<group>"; };
+		AA479EE52A363346007A6F8A /* Dialogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
+		AA479EE92A3633C3007A6F8A /* ChatListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListItem.swift; sourceTree = "<group>"; };
 		AA7A78A42A35E87200A3ECE0 /* RoadmapDetailStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadmapDetailStepCell.swift; sourceTree = "<group>"; };
 		AA7A78A62A35EEB100A3ECE0 /* OpenAISettingsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAISettingsForm.swift; sourceTree = "<group>"; };
 		AA898E352A349BBD00FE0C05 /* SearchCategoryGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryGridItem.swift; sourceTree = "<group>"; };
@@ -106,7 +122,7 @@
 		AA9A10E72A35A55800FCB156 /* RoadmapYamlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadmapYamlParser.swift; sourceTree = "<group>"; };
 		AA9A10E92A35B1C900FCB156 /* RoadmapGenerationStatusToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadmapGenerationStatusToast.swift; sourceTree = "<group>"; };
 		AABBBDCE2A33358100427BC6 /* Comentor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comentor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AABBBDD12A33358200427BC6 /* Comentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comentor.swift; sourceTree = "<group>"; };
+		AABBBDD12A33358200427BC6 /* ComentorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentorApp.swift; sourceTree = "<group>"; };
 		AABBBDD52A33358200427BC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AABBBDD72A33358400427BC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AABBBDD92A33358400427BC6 /* Comentor_Neue.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Comentor_Neue.entitlements; sourceTree = "<group>"; };
@@ -127,12 +143,13 @@
 		AAD5D03F2A3338A9005830D3 /* Roadmap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roadmap.swift; sourceTree = "<group>"; };
 		AAD5D0412A3338BB005830D3 /* Step.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		AAD5D0432A3338C5005830D3 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
-		AAD852532A362D83008B60C4 /* WatchComentor Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchComentor Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAD852552A362D83008B60C4 /* WatchComentorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchComentorApp.swift; sourceTree = "<group>"; };
+		AAD852532A362D83008B60C4 /* Comentor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comentor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAD852552A362D83008B60C4 /* ComentorWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComentorWatchApp.swift; sourceTree = "<group>"; };
 		AAD852572A362D83008B60C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AAD852592A362D85008B60C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAD8525C2A362D85008B60C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AAD852652A362E31008B60C4 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		AADDD35B2A36CE3D00D36072 /* ChatDialogueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDialogueCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA479EDD2A363178007A6F8A /* OpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +201,31 @@
 			path = Supports;
 			sourceTree = "<group>";
 		};
+		AA479EDB2A363178007A6F8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA479EE72A3633A1007A6F8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AA479EE32A363315007A6F8A /* ComentorChat.swift */,
+				AA479EE52A363346007A6F8A /* Dialogue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA479EE82A3633AA007A6F8A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AADDD35D2A36D7E700D36072 /* Chat */,
+				AA2FEA682A363C6C00D967D0 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AA898E392A349BCE00FE0C05 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,7 +255,9 @@
 				AA2B23852A36272D00126EA6 /* README.md */,
 				AABBBDD02A33358200427BC6 /* Comentor */,
 				AAD852542A362D83008B60C4 /* WatchComentor Watch App */,
+				AA2228DF2A337A8200B98129 /* Supports */,
 				AABBBDCF2A33358100427BC6 /* Products */,
+				AA479EDB2A363178007A6F8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,7 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				AABBBDCE2A33358100427BC6 /* Comentor.app */,
-				AAD852532A362D83008B60C4 /* WatchComentor Watch App.app */,
+				AAD852532A362D83008B60C4 /* Comentor.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,12 +273,11 @@
 		AABBBDD02A33358200427BC6 /* Comentor */ = {
 			isa = PBXGroup;
 			children = (
-				AABBBDD12A33358200427BC6 /* Comentor.swift */,
+				AABBBDD12A33358200427BC6 /* ComentorApp.swift */,
 				AABBBDD52A33358200427BC6 /* ContentView.swift */,
 				AAD5D0452A3338CD005830D3 /* Model */,
 				AABBBDEA2A3336FC00427BC6 /* Navigation */,
 				AABBBDF12A33376800427BC6 /* Views */,
-				AA2228DF2A337A8200B98129 /* Supports */,
 				AABBBDD72A33358400427BC6 /* Assets.xcassets */,
 				AABBBDD92A33358400427BC6 /* Comentor_Neue.entitlements */,
 				AABBBDDA2A33358400427BC6 /* Preview Content */,
@@ -299,8 +343,10 @@
 		AAD852542A362D83008B60C4 /* WatchComentor Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				AAD852552A362D83008B60C4 /* WatchComentorApp.swift */,
+				AAD852552A362D83008B60C4 /* ComentorWatchApp.swift */,
 				AAD852572A362D83008B60C4 /* ContentView.swift */,
+				AA479EE72A3633A1007A6F8A /* Model */,
+				AA479EE82A3633AA007A6F8A /* Views */,
 				AAD852592A362D85008B60C4 /* Assets.xcassets */,
 				AAD8525B2A362D85008B60C4 /* Preview Content */,
 			);
@@ -313,6 +359,17 @@
 				AAD8525C2A362D85008B60C4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AADDD35D2A36D7E700D36072 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				AA479EE12A363266007A6F8A /* ChatView.swift */,
+				AA479EE92A3633C3007A6F8A /* ChatListItem.swift */,
+				AA2FEA652A3639F100D967D0 /* ChatDetail.swift */,
+				AADDD35B2A36CE3D00D36072 /* ChatDialogueCell.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,8 +412,11 @@
 			dependencies = (
 			);
 			name = "WatchComentor Watch App";
+			packageProductDependencies = (
+				AA479EDC2A363178007A6F8A /* OpenAI */,
+			);
 			productName = "WatchComentor Watch App";
-			productReference = AAD852532A362D83008B60C4 /* WatchComentor Watch App.app */;
+			productReference = AAD852532A362D83008B60C4 /* Comentor.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -457,7 +517,7 @@
 				AABBBDEE2A33371F00427BC6 /* ChatView.swift in Sources */,
 				AA898E442A34AAF800FE0C05 /* RoadmapDetail.swift in Sources */,
 				AAC9A8FB2A346F77008B4CFF /* RoadmapList.swift in Sources */,
-				AABBBDD22A33358200427BC6 /* Comentor.swift in Sources */,
+				AABBBDD22A33358200427BC6 /* ComentorApp.swift in Sources */,
 				AAD5D0442A3338C5005830D3 /* Tag.swift in Sources */,
 				AABBBDD62A33358200427BC6 /* ContentView.swift in Sources */,
 				AAD5D0422A3338BB005830D3 /* Step.swift in Sources */,
@@ -475,8 +535,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA479EE22A363266007A6F8A /* ChatView.swift in Sources */,
 				AAD852582A362D83008B60C4 /* ContentView.swift in Sources */,
-				AAD852562A362D83008B60C4 /* WatchComentorApp.swift in Sources */,
+				AA479EE42A363315007A6F8A /* ComentorChat.swift in Sources */,
+				AA479EEA2A3633C3007A6F8A /* ChatListItem.swift in Sources */,
+				AA479EE62A363346007A6F8A /* Dialogue.swift in Sources */,
+				AADDD35C2A36CE3D00D36072 /* ChatDialogueCell.swift in Sources */,
+				AA2FEA692A363C6C00D967D0 /* SettingsView.swift in Sources */,
+				AA2FEA672A363A4300D967D0 /* DateExtensions.swift in Sources */,
+				AA479EDE2A3631DD007A6F8A /* OpenAISupport.swift in Sources */,
+				AA2FEA662A3639F100D967D0 /* ChatDetail.swift in Sources */,
+				AAD852562A362D83008B60C4 /* ComentorWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +554,7 @@
 /* Begin PBXTargetDependency section */
 		AAD8525F2A362D85008B60C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = AAD852522A362D83008B60C4 /* WatchComentor Watch App */;
 			targetProxy = AAD8525E2A362D85008B60C4 /* PBXContainerItemProxy */;
 		};
@@ -620,7 +690,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Comentor/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Comentor;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -661,7 +732,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Comentor/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Comentor;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -698,7 +770,6 @@
 				DEVELOPMENT_TEAM = 8GYXTCSZPZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = WatchComentor;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.stv.x.Comentor;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -708,7 +779,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stv.x.Comentor.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Comentor;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -729,7 +800,6 @@
 				DEVELOPMENT_TEAM = 8GYXTCSZPZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = WatchComentor;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.stv.x.Comentor;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -739,7 +809,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.stv.x.Comentor.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Comentor;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -814,6 +884,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AA2228E02A337AAD00B98129 /* XCRemoteSwiftPackageReference "MarkdownText" */;
 			productName = MarkdownText;
+		};
+		AA479EDC2A363178007A6F8A /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA898E452A34CC4F00FE0C05 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
 		};
 		AA898E462A34CC4F00FE0C05 /* OpenAI */ = {
 			isa = XCSwiftPackageProductDependency;

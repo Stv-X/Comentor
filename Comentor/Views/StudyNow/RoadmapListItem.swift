@@ -1,6 +1,6 @@
 //
 //  RoadmapListItem.swift
-//  Comentor-Neue
+//  Comentor
 //
 //  Created by 徐嗣苗 on 2023/6/10.
 //
@@ -83,6 +83,15 @@ struct RoadmapListItem: View {
                 Spacer()
                 if !disableMenus {
                     Menu {
+                        Button {
+                            withAnimation {
+                                roadmap.isPinned.toggle()
+                            }
+                        } label: {
+                            Label(roadmap.isPinned ? "Unpin" : "Pin",
+                                  systemImage: roadmap.isPinned ? "pin.slash" : "pin")
+                        }
+                        
                         if roadmap.tag == nil {
                             Button {
                                 isAddingTag = true

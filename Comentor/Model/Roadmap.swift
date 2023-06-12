@@ -1,6 +1,6 @@
 //
 //  Roadmap.swift
-//  Comentor-Neue
+//  Comentor
 //
 //  Created by 徐嗣苗 on 2023/6/9.
 //
@@ -13,7 +13,6 @@ import SwiftUI
 
 @Model
 final class Roadmap {
-    var roadmapIdentifier: UUID
     var title: String
     var category: String
     var creationDate: Date
@@ -28,14 +27,12 @@ final class Roadmap {
     var steps: [Step] = []
     
     init(_ title: String, category: StudyCategory) {
-        self.roadmapIdentifier = UUID()
         self.title = title
         self.category = category.rawValue
         self.creationDate = Date()
     }
     
     init(_ title: String, category: String) {
-        self.roadmapIdentifier = UUID()
         self.title = title
         self.category = category
         self.creationDate = Date()

@@ -1,6 +1,6 @@
 //
 //  ChatDetail.swift
-//  Comentor-Neue
+//  Comentor
 //
 //  Created by 徐嗣苗 on 2023/6/9.
 //
@@ -14,9 +14,6 @@ struct ChatDetail: View {
     
     @Query
     private var chats: [ComentorChat]
-    
-    @Query
-    private var dialogues: [Dialogue]
     
     var chat: ComentorChat
     
@@ -48,7 +45,6 @@ struct ChatDetail: View {
                             .scrollTransition(axis: .vertical) { content, phase in
                                 content
                                     .opacity(phase.isIdentity ? 1.0 : 0.20)
-//                                    .blur(radius: phase.isIdentity ? 0.0 : 3.0)
                                     .scaleEffect(phase.isIdentity ? 1.0 : 0.9)
                             }
                         }
@@ -181,10 +177,11 @@ struct ChatDetail: View {
             
             Task {
                 let (newAnswer, success) = await sendAndReceive(with: dialoguesToSend)
-                let latestDialogue = dialogues.sorted(by: {$0.timestamp < $1.timestamp}).last!
-                latestDialogue.answer = newAnswer
-                latestDialogue.success = success
-                try! modelContext.save()
+                if let latestDialogue = chat.latestDialogue {
+                    latestDialogue.answer = newAnswer
+                    latestDialogue.success = success
+                    try! modelContext.save()
+                }
                 isRequestingAnswer = false
 
             }

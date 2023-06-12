@@ -1,9 +1,8 @@
 //
 //  Dialogue.swift
-//  Comentor
+//  Comentor Watch App
 //
-//  Created by 徐嗣苗 on 2023/6/9.
-//
+//  Created by 徐嗣苗 on 2023/6/12.
 //
 
 import Foundation
@@ -24,3 +23,4 @@ final class Dialogue {
         self.timestamp = Date()
     }
 }
+

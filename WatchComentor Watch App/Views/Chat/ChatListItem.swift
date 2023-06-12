@@ -1,15 +1,14 @@
 //
 //  ChatListItem.swift
-//  Comentor
+//  Comentor Watch App
 //
-//  Created by 徐嗣苗 on 2023/6/9.
+//  Created by 徐嗣苗 on 2023/6/12.
 //
 
 import SwiftUI
 
 struct ChatListItem: View {
     var chat: ComentorChat
-    
     var body: some View {
         NavigationLink {
             ChatDetail(chat: chat)
@@ -24,21 +23,6 @@ struct ChatListItem: View {
                 VStack(alignment: .leading, spacing: 0) {
                     Text(chat.title)
                         .font(.headline)
-                    
-                    // Roadmap Preview
-                    if let roadmap = chat.roadmap {
-                        HStack {
-                            Circle()
-                                .frame(width: 10, height: 10)
-                                .foregroundStyle(roadmap.color)
-                            Text(roadmap.title)
-                                .foregroundStyle(.secondary)
-                                .font(.footnote)
-                        }
-                        .padding(4)
-                        .background(.thinMaterial)
-                        .cornerRadius(8)
-                    }
                 }
                 Spacer()
                 Text(chat.timestamp.formattedForLocalization())
@@ -61,12 +45,12 @@ struct DialoguePreview: View {
                     Text(latestDialogue.answer)
                         .font(.callout)
                         .foregroundStyle(.secondary)
-                        .lineLimit(2)
+                        .lineLimit(1)
                 } else if !latestDialogue.ask.isEmpty {
                     Text(latestDialogue.ask)
                         .font(.callout)
                         .foregroundStyle(.secondary)
-                        .lineLimit(2)
+                        .lineLimit(1)
                 }
             }
             
