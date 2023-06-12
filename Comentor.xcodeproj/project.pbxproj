@@ -12,6 +12,8 @@
 		AA2228E22A337AAD00B98129 /* MarkdownText in Frameworks */ = {isa = PBXBuildFile; productRef = AA2228E12A337AAD00B98129 /* MarkdownText */; };
 		AA2228E42A337AEB00B98129 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2228E32A337AEB00B98129 /* StringExtensions.swift */; };
 		AA2228E62A337B7100B98129 /* MdExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2228E52A337B7100B98129 /* MdExtensions.swift */; };
+		AA2263162A37017B006677AC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA2263152A37017B006677AC /* Localizable.xcstrings */; };
+		AA2263172A37017B006677AC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA2263152A37017B006677AC /* Localizable.xcstrings */; };
 		AA2B23862A36272D00126EA6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AA2B23842A36272D00126EA6 /* LICENSE */; };
 		AA2B23872A36272D00126EA6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA2B23852A36272D00126EA6 /* README.md */; };
 		AA2FEA662A3639F100D967D0 /* ChatDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2FEA652A3639F100D967D0 /* ChatDetail.swift */; };
@@ -98,6 +100,7 @@
 		AA2228DD2A337A6D00B98129 /* ChatBubbleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleShape.swift; sourceTree = "<group>"; };
 		AA2228E32A337AEB00B98129 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		AA2228E52A337B7100B98129 /* MdExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MdExtensions.swift; sourceTree = "<group>"; };
+		AA2263152A37017B006677AC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		AA2B23842A36272D00126EA6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		AA2B23852A36272D00126EA6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AA2FEA652A3639F100D967D0 /* ChatDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetail.swift; sourceTree = "<group>"; };
@@ -251,13 +254,14 @@
 		AABBBDC52A33358100427BC6 = {
 			isa = PBXGroup;
 			children = (
-				AA2B23842A36272D00126EA6 /* LICENSE */,
 				AA2B23852A36272D00126EA6 /* README.md */,
 				AABBBDD02A33358200427BC6 /* Comentor */,
 				AAD852542A362D83008B60C4 /* WatchComentor Watch App */,
 				AA2228DF2A337A8200B98129 /* Supports */,
 				AABBBDCF2A33358100427BC6 /* Products */,
 				AA479EDB2A363178007A6F8A /* Frameworks */,
+				AA2B23842A36272D00126EA6 /* LICENSE */,
+				AA2263152A37017B006677AC /* Localizable.xcstrings */,
 			);
 			sourceTree = "<group>";
 		};
@@ -439,7 +443,7 @@
 			};
 			buildConfigurationList = AABBBDC92A33358100427BC6 /* Build configuration list for PBXProject "Comentor" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = "zh-Hans";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -468,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2B23862A36272D00126EA6 /* LICENSE in Resources */,
+				AA2263162A37017B006677AC /* Localizable.xcstrings in Resources */,
 				AABBBDDC2A33358400427BC6 /* Preview Assets.xcassets in Resources */,
 				AA2B23872A36272D00126EA6 /* README.md in Resources */,
 				AABBBDD82A33358400427BC6 /* Assets.xcassets in Resources */,
@@ -480,6 +485,7 @@
 			files = (
 				AAD8525D2A362D85008B60C4 /* Preview Assets.xcassets in Resources */,
 				AAD8525A2A362D85008B60C4 /* Assets.xcassets in Resources */,
+				AA2263172A37017B006677AC /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

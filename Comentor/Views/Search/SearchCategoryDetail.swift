@@ -26,7 +26,7 @@ struct SearchCategoryDetail: View {
                 ContentUnavailableView {
                     Label("No Roadmaps", systemImage: "magnifyingglass")
                 } description: {
-                    Text("Chat with Comentor AI Robot to generate Study Road Map.")
+                    Text("Chat with Comentor AI Robot to generate Study Roadmaps.")
                 }
                 .symbolEffect(.pulse, options: .speed(0.3))
             }
