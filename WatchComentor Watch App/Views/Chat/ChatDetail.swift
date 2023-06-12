@@ -81,7 +81,7 @@ struct ChatDetail: View {
                 Text("Cancel")
             }
         } message: {
-            Text("This will delete all messages in this chat and cannot be undoed.")
+            Text("You cannot undo this action.")
         }
     }
     
