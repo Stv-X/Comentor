@@ -37,7 +37,7 @@ struct RoadmapGenerationStatusToast: View {
                 Text(title)
                     .bold()
             }
-            Text(LocalizedStringKey(message))
+            Text(message)
         }
         .opacity(0.4)
         .padding(30)
@@ -54,12 +54,12 @@ struct RoadmapGenerationStatusToast: View {
             return "ellipsis"
         }
     }
-    private var message: String {
+    private var message: LocalizedStringKey {
         switch status {
         case .succeed:
-            return "Generate Succeed"
+            return "Generation Succeed"
         case .failed:
-            return "Generate Failed"
+            return "Generation Failed"
         case .inProgress:
             return "Generating..."
         }

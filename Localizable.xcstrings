@@ -354,6 +354,36 @@
         }
       }
     },
+    "Generating..." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "生成中..."
+          }
+        }
+      }
+    },
+    "Generation Failed" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "学习路线生成失败"
+          }
+        }
+      }
+    },
+    "Generation Succeed" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "学习路线生成成功"
+          }
+        }
+      }
+    },
     "health" : {
       "extractionState" : "manual",
       "localizations" : {

@@ -27,7 +27,7 @@ struct ChatDetail: View {
     @State private var isToastShowing = false
     @State private var toastTitle = ""
     @State private var toastSucceed = false
-
+    
     
     @AppStorage("APIKey") private var aiApiKey: String?
     @AppStorage("AIModel") private var aiModel: Model?
@@ -36,32 +36,35 @@ struct ChatDetail: View {
     
     var body: some View {
         if chats.contains(chat) {
-            VStack {
-                ScrollView {
-                    VStack {
-                        ForEach(chat.dialoguesArray) { dialogue in
-                            ChatDialogueCell(dialogue: dialogue,
-                                             isRequestingAnswer: isRequestingAnswer)
-                            .scrollTransition(axis: .vertical) { content, phase in
-                                content
-                                    .opacity(phase.isIdentity ? 1.0 : 0.20)
-                                    .scaleEffect(phase.isIdentity ? 1.0 : 0.9)
-                            }
+            ScrollView {
+                VStack {
+                    ForEach(chat.dialoguesArray) { dialogue in
+                        ChatDialogueCell(dialogue: dialogue,
+                                         isRequestingAnswer: isRequestingAnswer)
+                        .scrollTransition(axis: .vertical) { content, phase in
+                            content
+                                .opacity(phase.isIdentity ? 1.0 : 0.20)
+                                .scaleEffect(phase.isIdentity ? 1.0 : 0.9)
                         }
-                        .padding(.horizontal)
+                    }
+                    .padding(.horizontal)
 #if os(macOS)
-                        .padding(.top, 4)
+                    .padding(.top, 4)
 #endif
+                }
+                .onTapGesture {
+                    if !isToastShowing {
+                        isTypingMessage = false
                     }
                 }
-                .safeAreaInset(edge: .bottom) {
-                    multiLineTextField
-                        .padding()
-                        .background(.ultraThinMaterial)
-                        .frame(minWidth: 400)
-                }
-                .scrollPosition(initialAnchor: .bottom)
             }
+            .safeAreaInset(edge: .bottom) {
+                multiLineTextField
+                    .padding()
+                    .background(.ultraThinMaterial)
+                    .frame(minWidth: 400)
+            }
+            .scrollPosition(initialAnchor: .bottom)
             .overlay {
                 if isToastShowing {
                     if isGeneratingRoadmap {
@@ -69,19 +72,6 @@ struct ChatDetail: View {
                     } else {
                         RoadmapGenerationStatusToast(status: toastSucceed ? .succeed : .failed, title: toastTitle)
                     }
-                }
-            }
-            
-            .onTapGesture {
-                if !isToastShowing {
-#if os(iOS)
-                    UIApplication.shared.sendAction(
-                        #selector(UIResponder.resignFirstResponder),
-                        to: nil, from: nil, for: nil
-                    )
-                    
-#endif
-                    isTypingMessage = false
                 }
             }
             
@@ -183,7 +173,7 @@ struct ChatDetail: View {
                     try! modelContext.save()
                 }
                 isRequestingAnswer = false
-
+                
             }
         }
     }
@@ -209,7 +199,7 @@ struct ChatDetail: View {
                         chat.roadmap = newRoadmap
                         
                         showToast(newRoadmap.title, succeed: true)
-
+                        
                     } else {
                         showToast("Invalid YAML statement.", succeed: false)
                     }
