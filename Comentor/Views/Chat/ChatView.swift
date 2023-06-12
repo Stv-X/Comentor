@@ -108,18 +108,19 @@ struct ChatView: View {
                actions: {
             TextField("Enter title here…", text: $newChatTitle)
             Button("Add") {
-                withAnimation {
-                    if chats.contains(where: { $0.title == newChatTitle}) {
-                        invalidTitle = true
-                    } else {
-                        let newChat = ComentorChat(newChatTitle)
-                        modelContext.insert(newChat)
-                        newChatTitle = ""
-                        selection = chats.first(where: {$0.title == newChat.title})
+                if !newChatTitle.isEmpty {
+                    withAnimation {
+                        if chats.contains(where: { $0.title == newChatTitle}) {
+                            invalidTitle = true
+                        } else {
+                            let newChat = ComentorChat(newChatTitle)
+                            modelContext.insert(newChat)
+                            newChatTitle = ""
+                            selection = chats.first(where: {$0.title == newChat.title})
+                        }
                     }
                 }
             }
-            .disabled(newChatTitle.isEmpty)
             
             Button("Cancel", role: .cancel) {
                 newChatTitle = ""
