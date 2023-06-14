@@ -19,7 +19,7 @@ struct ChatDetail: View {
     
     @FocusState private var isTypingMessage: Bool
     
-    @State private var messageText = ""
+    @State var messageText = ""
     
     @State private var isRequestingAnswer = false
     @State private var isGeneratingRoadmap = false

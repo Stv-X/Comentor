@@ -21,10 +21,10 @@ struct SearchCategoryGridItem: View {
     @State private var pitch: CGFloat = 0.0
     @State private var roll: CGFloat = 0.0
     
-    #if os(iOS)
+#if os(iOS)
     let motionManager = CMMotionManager()
     let motionQueue = OperationQueue()
-    #endif
+#endif
     
     var body: some View {
         NavigationLink {
@@ -32,63 +32,55 @@ struct SearchCategoryGridItem: View {
                 SearchCategoryDetail(selection: selection)
             }
         } label: {
-            GeometryReader { geometry in
-                ZStack {
-                    LinearGradient(colors: [selection.color.complementaryColor, selection.color],
-                                   startPoint: colorScheme == .light ? .top : .bottom,
-                                   endPoint: colorScheme == .light ? .bottom : .top)
-                    
-                    Image(systemName: selection.image)
-                        .foregroundColor(.black)
-                        .font(.system(size: 80))
-                        .imageScale(.large)
-                        .bold()
-                        .opacity(0.14)
-                        .blur(radius: shadowRadius(innerGeometry: geometry))
-                        .animation(.spring, value: pitch)
-                    
+            ZStack {
+                LinearGradient(colors: [selection.color.complementaryColor, selection.color],
+                               startPoint: colorScheme == .light ? .top : .bottom,
+                               endPoint: colorScheme == .light ? .bottom : .top)
+                
+                Image(systemName: selection.image)
+                    .foregroundColor(.black)
+                    .font(.system(size: 50))
+                    .imageScale(.large)
+                    .scaleEffect(shadowScale)
+                    .bold()
+                    .opacity(0.14)
+                    .blur(radius: shadowRadius)
+                    .animation(.spring, value: pitch)
+                
 #if os(iOS)
-                        .offset(x: 40 + roll * 20, y: 20 + pitch * 10)
-
-                        .task {
-                            enableMotionManager()
-                        }
-                        .onDisappear {
-                            disableMotionManager()
-                        }
+                    .offset(x: roll * 20, y: pitch * 10)
+                    .task {
+                        enableMotionManager()
+                    }
+                    .onDisappear {
+                        disableMotionManager()
+                    }
 #else
-                        .offset(x: 20 + roll * 5, y: pitch * 5)
-#endif
-                    
-                    Image(systemName: selection.image)
-                        .foregroundStyle(
-                            LinearGradient(colors: [.black.opacity(0.5), .black],
-                                           startPoint: .bottom,
-                                           endPoint: .top)
-                        )
-                        .font(.system(size: 50))
-                        .imageScale(.large)
-                        .bold()
-                        .opacity(0.3)
-                    
-                }
-                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .stroke(lineWidth: 1)
-                        .foregroundStyle(.ultraThickMaterial.opacity(0.8))
-                    
-                }
-#if os(macOS)
-                .overlay(GeometryReader { innerGeometry in
-                    Color.clear
-                        .onAppear {
-                            Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-                                updateCursorPosition(innerGeometry: innerGeometry)
-                            }
+                    .offset(x: roll * 5, y: pitch * 5)
+                    .task {
+                        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+                            updateCursorPosition()
                         }
-                })
+                    }
 #endif
+                
+                Image(systemName: selection.image)
+                    .foregroundStyle(
+                        LinearGradient(colors: [.black.opacity(0.5), .black],
+                                       startPoint: .bottom,
+                                       endPoint: .top)
+                    )
+                    .font(.system(size: 50))
+                    .imageScale(.large)
+                    .bold()
+                    .opacity(0.3)
+                
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(lineWidth: 1)
+                    .foregroundStyle(.ultraThickMaterial.opacity(0.8))
             }
             .frame(minHeight: 133)
         }
@@ -117,18 +109,18 @@ struct SearchCategoryGridItem: View {
         }
     }
     
-    #if os(macOS)
-    private func updateCursorPosition(innerGeometry: GeometryProxy) {
+#if os(macOS)
+    private func updateCursorPosition() {
         if let window = NSApp.keyWindow {
             let mouseLocation = NSEvent.mouseLocation
             let viewLocation = window.convertPoint(fromScreen: mouseLocation)
-            let viewFrame = innerGeometry.frame(in: .local)
+            let displayFrame = NSScreen.main!.frame
             
-            roll = -(viewLocation.x - viewFrame.midX) / 400
-            pitch = (viewLocation.y - viewFrame.midY) / 300
+            roll = -(viewLocation.x - displayFrame.midX) / 400
+            pitch = (viewLocation.y - displayFrame.midY) / 300
         }
     }
-    #else
+#else
     private func enableMotionManager() {
         motionManager.startDeviceMotionUpdates(to: motionQueue) {
             data, error in
@@ -147,22 +139,36 @@ struct SearchCategoryGridItem: View {
     private func disableMotionManager() {
         motionManager.stopDeviceMotionUpdates()
     }
-    #endif
+#endif
     
-    private func shadowRadius(innerGeometry: GeometryProxy) -> CGFloat {
-        let viewFrame = innerGeometry.frame(in: .local)
-        
-        let centerPoint = CGPoint(x: viewFrame.midX, y: viewFrame.midY)
-        
+    private var shadowScale: CGFloat {
+#if os(iOS)
         let shadowOffset = CGPoint(
-            x: 40 + roll * 20, y: 20 + pitch * 10
+            x: roll * 20, y: pitch * 10
         )
+#else
+        let shadowOffset = CGPoint(
+            x: roll * 5, y: pitch * 5
+        )
+#endif
+        let offsetDistance = sqrt(shadowOffset.x * shadowOffset.x + shadowOffset.y * shadowOffset.y)
+        return max(1, 1 + offsetDistance * 0.03)
         
-        let distanceX = centerPoint.x.distance(to: shadowOffset.x)
-        let distanceY = centerPoint.y.distance(to: shadowOffset.y)
+    }
+    
+    private var shadowRadius: CGFloat {
+#if os(iOS)
+        let shadowOffset = CGPoint(
+            x: roll * 20, y: pitch * 10
+        )
+#else
+        let shadowOffset = CGPoint(
+            x: roll * 5, y: pitch * 5
+        )
+#endif
         
-        let distance = sqrt(distanceX * distanceX + distanceY * distanceY)
+        let offsetDistance = sqrt(shadowOffset.x * shadowOffset.x + shadowOffset.y * shadowOffset.y)
         
-        return max(4, distance / 10)
+        return max(4, offsetDistance / 2)
     }
 }

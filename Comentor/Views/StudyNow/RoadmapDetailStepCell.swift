@@ -14,7 +14,23 @@ struct RoadmapDetailStepCell: View {
     
     var body: some View {
         DisclosureGroup(isExpanded: $isNotFinished) {
-            Text(step.content)
+            HStack {
+                Text(step.content)
+                    .strikethrough(step.isFinished)
+                Spacer()
+                if !step.isFinished {
+                    if let chat = step.roadmap!.chat {
+                        NavigationLink {
+                            NavigationStack {
+                                ChatDetail(chat: chat, messageText: step.content)
+                            }
+                        } label: {
+                            Image(systemName: "quote.bubble")
+                                .foregroundStyle(.accent)
+                        }
+                    }
+                }
+            }
         } label: {
             HStack {
                 HStack(alignment: .top) {
@@ -27,9 +43,10 @@ struct RoadmapDetailStepCell: View {
                 Spacer()
                 if step.isFinished {
                     Text(step.finishDate!.formattedForLocalization())
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
                 }
+                
                 Image(systemName: "checkmark.circle.fill")
                     .foregroundColor(
                         step.isFinished ? step.roadmap!.color : .secondary.opacity(0.3))
