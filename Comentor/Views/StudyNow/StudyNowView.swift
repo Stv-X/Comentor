@@ -15,6 +15,8 @@ struct StudyNowView: View {
     @Query(sort: \.tagIdentifier, order: .forward)
     private var tags: [Tag]
     
+    @State private var showStatistics = false
+    
     var body: some View {
         if roadmaps.isEmpty {
             ContentUnavailableView {
@@ -30,6 +32,18 @@ struct StudyNowView: View {
                     Divider()
                 }
                 RoadmapList(roadmaps: roadmaps)
+            }
+            .toolbar {
+                ToolbarItem {
+                    Button {
+                        showStatistics = true
+                    } label: {
+                        Label("Statistics", systemImage: "chart.pie")
+                    }
+                }
+            }
+            .sheet(isPresented: $showStatistics) {
+                StatisticsView()
             }
         }
     }

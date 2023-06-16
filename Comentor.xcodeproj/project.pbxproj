@@ -69,6 +69,7 @@
 		AAD852602A362D85008B60C4 /* Comentor.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AAD852532A362D83008B60C4 /* Comentor.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AAD852662A362E31008B60C4 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD852652A362E31008B60C4 /* UIExtensions.swift */; };
 		AADDD35C2A36CE3D00D36072 /* ChatDialogueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADDD35B2A36CE3D00D36072 /* ChatDialogueCell.swift */; };
+		AAE353582A3BE60300A40050 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE353572A3BE60300A40050 /* StatisticsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		AAD8525C2A362D85008B60C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AAD852652A362E31008B60C4 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		AADDD35B2A36CE3D00D36072 /* ChatDialogueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDialogueCell.swift; sourceTree = "<group>"; };
+		AAE353572A3BE60300A40050 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				AAD5D0392A333822005830D3 /* StudyNowView.swift */,
+				AAE353572A3BE60300A40050 /* StatisticsView.swift */,
 				AAC9A8FA2A346F77008B4CFF /* RoadmapList.swift */,
 				AAC9A8F82A346F6D008B4CFF /* RoadmapListItem.swift */,
 				AAC9A8FC2A346FA7008B4CFF /* RoadmapStepItem.swift */,
@@ -527,6 +530,7 @@
 				AAD5D0442A3338C5005830D3 /* Tag.swift in Sources */,
 				AABBBDD62A33358200427BC6 /* ContentView.swift in Sources */,
 				AAD5D0422A3338BB005830D3 /* Step.swift in Sources */,
+				AAE353582A3BE60300A40050 /* StatisticsView.swift in Sources */,
 				AA9A10E82A35A55800FCB156 /* RoadmapYamlParser.swift in Sources */,
 				AA898E3B2A349CD700FE0C05 /* SearchCategoryDetail.swift in Sources */,
 				AA8C30422A335B16004A88A6 /* ChatDetail.swift in Sources */,

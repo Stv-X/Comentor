@@ -41,11 +41,6 @@ struct ChatDetail: View {
                     ForEach(chat.dialoguesArray) { dialogue in
                         ChatDialogueCell(dialogue: dialogue,
                                          isRequestingAnswer: isRequestingAnswer)
-                        .scrollTransition(axis: .vertical) { content, phase in
-                            content
-                                .opacity(phase.isIdentity ? 1.0 : 0.20)
-                                .scaleEffect(phase.isIdentity ? 1.0 : 0.9)
-                        }
                     }
                     .padding(.horizontal)
 #if os(macOS)
@@ -228,7 +223,7 @@ struct ChatDetail: View {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             withAnimation(.linear) {
-                self.isToastShowing = false
+                isToastShowing = false
             }
         }
     }

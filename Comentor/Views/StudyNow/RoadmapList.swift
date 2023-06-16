@@ -23,6 +23,12 @@ struct RoadmapList: View {
                         RoadmapListItem(roadmap: roadmap)
                             .padding(.horizontal)
                             .padding(.vertical, 4)
+                            .scrollTransition(axis: .vertical) { content, phase in
+                                content
+                                    .opacity(phase.isIdentity ? 1.0 : 0.20)
+                                    .scaleEffect(phase.isIdentity ? 1.0 : 0.9)
+                                    .blur(radius: phase.isIdentity ? 0.0 : 1.0)
+                            }
                     }
                 } header: {
                     HStack {
@@ -40,6 +46,12 @@ struct RoadmapList: View {
                 RoadmapListItem(roadmap: roadmap)
                     .padding(.horizontal)
                     .padding(.vertical, 4)
+                    .scrollTransition(axis: .vertical) { content, phase in
+                        content
+                            .opacity(phase.isIdentity ? 1.0 : 0.20)
+                            .scaleEffect(phase.isIdentity ? 1.0 : 0.9)
+                            .blur(radius: phase.isIdentity ? 0.0 : 1.0)
+                    }
             }
         }
     }
