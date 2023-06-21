@@ -57,12 +57,14 @@ func roadmapYam(_ dialogues: [Dialogue]) async -> (String, Bool) {
         let result = try await openAI.chats(query: query)
         let response = result.choices.first!.message.content
         
-        if let formattedResponse = response.formattedYAML() {
-            print(formattedResponse)
-            return (formattedResponse, true)
+        if let response = response {
+            if let formattedResponse = response.formattedYAML() {
+                print(formattedResponse)
+                return (formattedResponse, true)
+            }
         }
-        print(response)
-        return (response, true)
+        print(response ?? "")
+        return (response ?? "", true)
     } catch {
         return (error.localizedDescription, false)
     }
@@ -116,11 +118,9 @@ public extension Model {
     static var allCases: [Model] {
         return [
             gpt3_5Turbo,
-            gpt3_5Turbo0301,
+            gpt3_5Turbo0613,
             gpt4,
-            gpt4_0314,
-            gpt4_32k,
-            gpt4_32k_0314
+            gpt4_0613,
         ]
     }
 }
