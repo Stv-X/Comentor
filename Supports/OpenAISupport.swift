@@ -57,12 +57,14 @@ func roadmapYam(_ dialogues: [Dialogue]) async -> (String, Bool) {
         let result = try await openAI.chats(query: query)
         let response = result.choices.first!.message.content
         
-        if let formattedResponse = response.formattedYAML() {
-            print(formattedResponse)
-            return (formattedResponse, true)
+        if let response = response {
+            if let formattedResponse = response.formattedYAML() {
+                print(formattedResponse)
+                return (formattedResponse, true)
+            }
         }
-        print(response)
-        return (response, true)
+        print(response ?? "")
+        return (response ?? "", true)
     } catch {
         return (error.localizedDescription, false)
     }
