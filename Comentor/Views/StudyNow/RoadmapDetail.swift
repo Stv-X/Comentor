@@ -27,11 +27,7 @@ struct RoadmapDetail: View {
                     
                     if let chat = roadmap.chat {
                         Section("Chat") {
-                            NavigationLink {
-                                NavigationStack {
-                                    ChatDetail(chat: chat)
-                                }
-                            } label: {
+                            NavigationStack {
                                 ChatListItem(chat: chat)
                             }
                         }
@@ -39,15 +35,16 @@ struct RoadmapDetail: View {
                 }
                 .toolbar {
                     ToolbarItemGroup {
-                        Button {
-                            withAnimation {
-                                roadmap.isPinned.toggle()
-                            }
-                        } label: {
-                            Label("Pin", systemImage: roadmap.isPinned ? "pin.fill" : "pin")
-                        }
-                        
                         Menu {
+                            Button {
+                                withAnimation {
+                                    roadmap.isPinned.toggle()
+                                }
+                            } label: {
+                                Label(roadmap.isPinned ? "Unpin" : "pin",
+                                      systemImage: roadmap.isPinned ? "pin.slash" : "pin")
+                            }
+                            
                             Button {
                                 
                             } label: {

@@ -70,7 +70,6 @@ struct ChatView: View {
                     }
             }
         }
-        .listStyle(.plain)
         
         // No Chats
         .overlay {

@@ -5,6 +5,7 @@
 
 # Xcode - User files
 xcuserdata/
+xcshareddata/
 
 *.xcuserstate
 

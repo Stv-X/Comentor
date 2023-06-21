@@ -14,10 +14,10 @@ struct RoadmapDetailStepCell: View {
     
     var body: some View {
         DisclosureGroup(isExpanded: $isNotFinished) {
-            HStack {
+            VStack {
                 Text(step.content)
                     .strikethrough(step.isFinished)
-                Spacer()
+                
                 if !step.isFinished {
                     if let chat = step.roadmap!.chat {
                         NavigationLink {

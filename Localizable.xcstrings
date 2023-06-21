@@ -123,9 +123,6 @@
         }
       }
     },
-    "Category" : {
-
-    },
     "Chat" : {
       "localizations" : {
         "zh-Hans" : {
@@ -228,7 +225,14 @@
       }
     },
     "Count" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数量"
+          }
+        }
+      }
     },
     "Creation Date" : {
       "localizations" : {
@@ -540,6 +544,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "哲学"
+          }
+        }
+      }
+    },
+    "pin" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "置顶"
           }
         }
       }
