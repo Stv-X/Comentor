@@ -100,7 +100,8 @@ public struct CustomCode: CodeMarkdownStyle {
                     configuration.language.flatMap { Text($0) }?
                         .padding(3)
                         .font(.footnote.weight(.semibold))
-                        .foregroundStyle(Color("reversedTextColor"))
+//                        .foregroundStyle(Color("reversedTextColor"))
+                        .foregroundStyle(.white)
                         .background(.gray)
                         .cornerRadius(4)
                     Spacer()

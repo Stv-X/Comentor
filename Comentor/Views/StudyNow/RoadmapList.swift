@@ -33,9 +33,8 @@ struct RoadmapList: View {
                 } header: {
                     HStack {
                         Text("Pinned")
-                            .font(.subheadline)
+                            .font(.title3)
                             .fontWeight(.semibold)
-                            .foregroundStyle(Color.secondary)
                             .padding([.top, .leading])
                         Spacer()
                     }

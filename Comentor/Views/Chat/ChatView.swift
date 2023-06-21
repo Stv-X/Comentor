@@ -48,6 +48,8 @@ struct ChatView: View {
                             }
                     }
                 }
+                .headerProminence(.increased)
+
             }
             ForEach(chats.filter({ !$0.isPinned })) { chat in
                 ChatListItem(chat: chat)
@@ -70,7 +72,6 @@ struct ChatView: View {
                     }
             }
         }
-        
         // No Chats
         .overlay {
             if chats.isEmpty {

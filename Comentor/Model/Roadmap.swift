@@ -9,6 +9,7 @@
 import Foundation
 import SwiftData
 import SwiftUI
+import Charts
 
 
 @Model
@@ -63,7 +64,7 @@ extension Roadmap {
     
 }
 
-enum StudyCategory: String, Codable {
+enum StudyCategory: String, Codable, Plottable {
     case coding = "coding"
     case language = "language"
     case health = "health"

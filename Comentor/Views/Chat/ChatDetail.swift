@@ -192,7 +192,7 @@ struct ChatDetail: View {
                         }
                         newRoadmap.chat = chat
                         chat.roadmap = newRoadmap
-                        
+                        try! modelContext.save()
                         showToast(newRoadmap.title, succeed: true)
                         
                     } else {

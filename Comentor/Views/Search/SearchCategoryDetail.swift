@@ -31,6 +31,6 @@ struct SearchCategoryDetail: View {
                 .symbolEffect(.pulse, options: .speed(0.3))
             }
         }
-        .navigationTitle(LocalizedStringKey(selection.category.rawValue.capitalized))
+        .navigationTitle(selection.category.localizedLabel)
     }
 }

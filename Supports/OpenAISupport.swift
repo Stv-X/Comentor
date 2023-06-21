@@ -22,7 +22,7 @@ steps:
       content: ""
 
 务必遵循以下要求:
-1. title 提炼主题即可，不要采用「...的学习路线」/「学习...的路线」为结尾的格式;
+1. title 提炼主题即可，不要以'学习路线'为结尾;
 2. category 只能根据所生成的学习路线，从以下10个分类中挑选出最合适的一个：
 "coding", "language", "health", "art", "technology", "biology", "philosophy", "business", "sport", "math".
 切记不能使用其他的字符串，也不能为空，不然会导致程序的错误;

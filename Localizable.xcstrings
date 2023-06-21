@@ -628,6 +628,9 @@
         }
       }
     },
+    "Select a category to see statistics" : {
+
+    },
     "Select a chat" : {
       "localizations" : {
         "zh-Hans" : {

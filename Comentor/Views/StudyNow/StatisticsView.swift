@@ -11,20 +11,33 @@ import Charts
 
 struct StatisticsView: View {
     
+    @State private var selectedCategory: StudyCategory?
+    
     @Query
     private var roadmaps: [Roadmap]
     
     var body: some View {
-        Chart(chartData, id: \.id) { element in
-            BarMark(
-                x: .value("Count", element.count),
-                stacking: .normalized
-            )
-            .foregroundStyle(element.category.getColor())
+        VStack {
+            Text(selectedCategory?.localizedLabel ?? "Select a category to see statistics")
+                .font(.largeTitle)
+                .bold()
+                .padding()
+            
+            Chart(chartData) { element in
+                SectorMark(
+                    angle: .value("Count", element.count),
+                    innerRadius: .ratio(0.618),
+                    angularInset: 1.5
+                )
+                .cornerRadius(5)
+                .foregroundStyle(element.category.getColor())
+//                .opacity(element.category == selectedCategory ? 1.0 : 0.3)
+            }
+            .chartAngleSelection($selectedCategory)
+            .frame(height: 300)
+            .padding()
+            
         }
-        .frame(height: 80)
-        .chartXAxis(.hidden)
-        .padding()
     }
     
     private var chartData: [StatisticsData] {
