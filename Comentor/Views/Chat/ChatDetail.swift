@@ -39,8 +39,13 @@ struct ChatDetail: View {
             ScrollView {
                 VStack {
                     ForEach(chat.dialoguesArray) { dialogue in
+                        #if !os(xrOS)
                         ChatDialogueCell(dialogue: dialogue,
                                          isRequestingAnswer: isRequestingAnswer)
+                        #else
+                        ChatDialogueCellVision(dialogue: dialogue,
+                                         isRequestingAnswer: isRequestingAnswer)
+                        #endif
                     }
                     .padding(.horizontal)
 #if os(macOS)

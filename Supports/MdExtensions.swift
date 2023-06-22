@@ -5,19 +5,9 @@
 //  Created by 徐嗣苗 on 2023/6/9.
 //
 
+#if !os(xrOS)
 import SwiftUI
 import MarkdownText
-
-let testMarkdown = """
-当然可以，下面是一个简单的 Swift Hello World 示例：
-
-```swift
-print("Hello, World!")
-```
-
-在 Swift 中，使用 `print` 函数可以输出字符串到控制台。上述代码会输出 `Hello, World!` 到控制台。
-
-"""
 
 struct CustomHeading: HeadingMarkdownStyle {
     func makeBody(configuration: Configuration) -> some View {
@@ -100,7 +90,6 @@ public struct CustomCode: CodeMarkdownStyle {
                     configuration.language.flatMap { Text($0) }?
                         .padding(3)
                         .font(.footnote.weight(.semibold))
-//                        .foregroundStyle(Color("reversedTextColor"))
                         .foregroundStyle(.white)
                         .background(.gray)
                         .cornerRadius(4)
@@ -200,21 +189,16 @@ extension ImageMarkdownStyle where Self == CustomImage {
     static var custom: Self { .init() }
 }
 
-struct MarkdownTestView: View {
-    var body: some View {
-        MarkdownText(testMarkdown)
-            .padding()
-            .background(.thinMaterial)
-            .cornerRadius(10)
-            .padding()
+extension View {
+    func comentorAnswerMarkdownStyle() -> some View {
+        self.markdownHeadingStyle(.custom)
+            .markdownQuoteStyle(.custom)
+            .markdownCodeStyle(.custom)
+            .markdownInlineCodeStyle(.custom)
+            .markdownOrderedListBulletStyle(.custom)
+            .markdownUnorderedListBulletStyle(.custom)
+            .markdownImageStyle(.custom)
     }
 }
 
-#Preview {
-    
-    MarkdownTestView()
-        .previewLayout(.sizeThatFits)
-        .markdownCodeStyle(.custom)
-        .markdownInlineCodeStyle(.custom)
-    
-}
+#endif

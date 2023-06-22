@@ -1,15 +1,14 @@
 //
-//  ChatDialogueCell.swift
+//  ChatDialogueCellVision.swift
 //  Comentor
 //
-//  Created by 徐嗣苗 on 2023/6/9.
+//  Created by 徐嗣苗 on 2023/6/22.
 //
 
-#if !os(xrOS)
-import SwiftUI
-import MarkdownText
 
-struct ChatDialogueCell: View {
+import SwiftUI
+
+struct ChatDialogueCellVision: View {
     var dialogue: Dialogue
     
     @State var isRequestingAnswer: Bool
@@ -44,19 +43,17 @@ struct ChatDialogueCell: View {
                     .scaleEffect(0.5)
 #endif
             } else if isRequestingAnswer && dialogue.answer == "" && currentReceivedMessage != "" {
-                MarkdownText(currentReceivedMessage)
+                Text(currentReceivedMessage)
                     .padding()
                     .background(.secondary.opacity(0.2))
                     .clipShape(currentReceivedMessage.count > 3 ? AnyShape(ChatBubbleShape(direction: .left)) : AnyShape(Capsule()))
-                    .comentorAnswerMarkdownStyle()
                     .animation(.spring, value: currentReceivedMessage)
             } else {
                 if dialogue.answer != "" && dialogue.success {
-                    MarkdownText(dialogue.answer)
+                    Text(dialogue.answer)
                         .padding()
                         .background(.secondary.opacity(0.2))
                         .clipShape(dialogue.answer.count > 3 ? AnyShape(ChatBubbleShape(direction: .left)) : AnyShape(Capsule()))
-                        .comentorAnswerMarkdownStyle()
                     
                         .contextMenu {
                             Button {
@@ -75,5 +72,3 @@ struct ChatDialogueCell: View {
         }
     }
 }
-
-#endif

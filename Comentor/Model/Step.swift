@@ -17,9 +17,6 @@ final class Step {
     var content: String
     var finishDate: Date?
     
-    @Transient
-    var isFinished: Bool { self.finishDate != nil }
-    
     var roadmap: Roadmap?
     
     init(index: Int, title: String, content: String) {
@@ -30,6 +27,11 @@ final class Step {
 }
 
 extension Step {
+    @Transient
+    var isFinished: Bool {
+        return finishDate != nil
+    }
+    
     func toggleFinishState() {
         if self.isFinished {
             self.finishDate = nil

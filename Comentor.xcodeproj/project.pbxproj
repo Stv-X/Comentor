@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA2228DC2A337A0700B98129 /* ChatDialogueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2228DB2A337A0700B98129 /* ChatDialogueCell.swift */; };
 		AA2228DE2A337A6D00B98129 /* ChatBubbleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2228DD2A337A6D00B98129 /* ChatBubbleShape.swift */; };
-		AA2228E22A337AAD00B98129 /* MarkdownText in Frameworks */ = {isa = PBXBuildFile; productRef = AA2228E12A337AAD00B98129 /* MarkdownText */; };
+		AA2228E22A337AAD00B98129 /* MarkdownText in Frameworks */ = {isa = PBXBuildFile; platformFilters = (ios, macos, ); productRef = AA2228E12A337AAD00B98129 /* MarkdownText */; };
 		AA2228E42A337AEB00B98129 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2228E32A337AEB00B98129 /* StringExtensions.swift */; };
 		AA2228E62A337B7100B98129 /* MdExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2228E52A337B7100B98129 /* MdExtensions.swift */; };
 		AA2263162A37017B006677AC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AA2263152A37017B006677AC /* Localizable.xcstrings */; };
@@ -66,10 +66,11 @@
 		AAD852582A362D83008B60C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD852572A362D83008B60C4 /* ContentView.swift */; };
 		AAD8525A2A362D85008B60C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD852592A362D85008B60C4 /* Assets.xcassets */; };
 		AAD8525D2A362D85008B60C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD8525C2A362D85008B60C4 /* Preview Assets.xcassets */; };
-		AAD852602A362D85008B60C4 /* Comentor.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AAD852532A362D83008B60C4 /* Comentor.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AAD852602A362D85008B60C4 /* Comentor.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AAD852532A362D83008B60C4 /* Comentor.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AAD852662A362E31008B60C4 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD852652A362E31008B60C4 /* UIExtensions.swift */; };
 		AADDD35C2A36CE3D00D36072 /* ChatDialogueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADDD35B2A36CE3D00D36072 /* ChatDialogueCell.swift */; };
 		AAE353582A3BE60300A40050 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE353572A3BE60300A40050 /* StatisticsView.swift */; };
+		AAF078362A441E1F00B09FD8 /* ChatDialogueCellVision.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF078352A441E1F00B09FD8 /* ChatDialogueCellVision.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		AAD852652A362E31008B60C4 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		AADDD35B2A36CE3D00D36072 /* ChatDialogueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDialogueCell.swift; sourceTree = "<group>"; };
 		AAE353572A3BE60300A40050 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		AAF078352A441E1F00B09FD8 /* ChatDialogueCellVision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDialogueCellVision.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				AA8C303F2A335122004A88A6 /* ChatListItem.swift */,
 				AA8C30412A335B16004A88A6 /* ChatDetail.swift */,
 				AA2228DB2A337A0700B98129 /* ChatDialogueCell.swift */,
+				AAF078352A441E1F00B09FD8 /* ChatDialogueCellVision.swift */,
 				AA9A10E92A35B1C900FCB156 /* RoadmapGenerationStatusToast.swift */,
 				AA7A78A62A35EEB100A3ECE0 /* OpenAISettingsForm.swift */,
 			);
@@ -516,6 +519,7 @@
 				AA2228DC2A337A0700B98129 /* ChatDialogueCell.swift in Sources */,
 				AAD5D03C2A333854005830D3 /* ComentorChat.swift in Sources */,
 				AABBBDF02A33372500427BC6 /* SearchView.swift in Sources */,
+				AAF078362A441E1F00B09FD8 /* ChatDialogueCellVision.swift in Sources */,
 				AAC9A8F92A346F6D008B4CFF /* RoadmapListItem.swift in Sources */,
 				AA898E3F2A34A4A000FE0C05 /* TagListItem.swift in Sources */,
 				AAD852662A362E31008B60C4 /* UIExtensions.swift in Sources */,
@@ -564,7 +568,6 @@
 /* Begin PBXTargetDependency section */
 		AAD8525F2A362D85008B60C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = AAD852522A362D83008B60C4 /* WatchComentor Watch App */;
 			targetProxy = AAD8525E2A362D85008B60C4 /* PBXContainerItemProxy */;
 		};
@@ -720,7 +723,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stv.x.Comentor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -762,7 +768,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stv.x.Comentor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
