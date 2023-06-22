@@ -34,6 +34,6 @@ struct NavigationItem: Identifiable, CaseIterable, Hashable, Equatable {
 
 let navigationItems = [
     NavigationItem(title: "Study Now", image: "graduationcap"),
-    NavigationItem(title: "Chat", image: "text.bubble.left.and.bubble.right"),
+    NavigationItem(title: "Chat", image: "bubble.left.and.text.bubble.right"),
     NavigationItem(title: "Search", image: "magnifyingglass")
 ]

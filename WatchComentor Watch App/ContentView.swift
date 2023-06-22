@@ -14,7 +14,7 @@ struct ContentView: View {
                 NavigationLink {
                    ChatView()
                 } label: {
-                    Label("Chat", systemImage: "text.bubble.left.and.bubble.right")
+                    Label("Chat", systemImage: "bubble.left.and.text.bubble.right")
                 }
                 NavigationLink {
                     SettingsView()
