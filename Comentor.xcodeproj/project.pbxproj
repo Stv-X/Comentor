@@ -66,7 +66,7 @@
 		AAD852582A362D83008B60C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD852572A362D83008B60C4 /* ContentView.swift */; };
 		AAD8525A2A362D85008B60C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD852592A362D85008B60C4 /* Assets.xcassets */; };
 		AAD8525D2A362D85008B60C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAD8525C2A362D85008B60C4 /* Preview Assets.xcassets */; };
-		AAD852602A362D85008B60C4 /* Comentor.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AAD852532A362D83008B60C4 /* Comentor.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AAD852602A362D85008B60C4 /* Comentor.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AAD852532A362D83008B60C4 /* Comentor.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AAD852662A362E31008B60C4 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD852652A362E31008B60C4 /* UIExtensions.swift */; };
 		AADDD35C2A36CE3D00D36072 /* ChatDialogueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADDD35B2A36CE3D00D36072 /* ChatDialogueCell.swift */; };
 		AAE353582A3BE60300A40050 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE353572A3BE60300A40050 /* StatisticsView.swift */; };
@@ -568,6 +568,7 @@
 /* Begin PBXTargetDependency section */
 		AAD8525F2A362D85008B60C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = AAD852522A362D83008B60C4 /* WatchComentor Watch App */;
 			targetProxy = AAD8525E2A362D85008B60C4 /* PBXContainerItemProxy */;
 		};
@@ -630,8 +631,10 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				RESOURCES_TARGETED_DEVICE_FAMILY = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "";
 			};
 			name = Debug;
 		};
@@ -684,7 +687,9 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				RESOURCES_TARGETED_DEVICE_FAMILY = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
+				TARGETED_DEVICE_FAMILY = "";
 			};
 			name = Release;
 		};
