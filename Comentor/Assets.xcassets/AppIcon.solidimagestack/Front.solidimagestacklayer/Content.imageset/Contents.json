@@ -1,0 +1,13 @@
+{
+  "images" : [
+    {
+      "filename" : "Comentor_visionOS_App_Icon_Foreground_2.png",
+      "idiom" : "reality",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

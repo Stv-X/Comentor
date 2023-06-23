@@ -33,7 +33,7 @@ struct StatisticsView: View {
                 .foregroundStyle(element.category.getColor())
 //                .opacity(element.category == selectedCategory ? 1.0 : 0.3)
             }
-            .chartAngleSelection($selectedCategory)
+            .chartAngleSelection(value: $selectedCategory)
             .frame(height: 300)
             .padding()
             
@@ -65,4 +65,3 @@ struct StatisticsData: Identifiable, Hashable {
         self.count = count
     }
 }
-
