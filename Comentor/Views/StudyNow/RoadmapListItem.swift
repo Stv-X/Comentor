@@ -200,7 +200,7 @@ struct RoadmapListItem: View {
             
             modelContext.delete(roadmap)
             
-            try! modelContext.save()
+//            try! modelContext.save()
         }
     }
     

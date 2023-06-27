@@ -20,13 +20,16 @@ struct RoadmapDetailStepCell: View {
                 
                 if !step.isFinished {
                     if let chat = step.roadmap!.chat {
-                        NavigationLink {
-                            NavigationStack {
-                                ChatDetail(chat: chat, messageText: step.content)
+                        HStack {
+                            NavigationLink {
+                                NavigationStack {
+                                    ChatDetail(chat: chat, messageText: step.content)
+                                }
+                            } label: {
+                                Image(systemName: "quote.bubble")
+                                    .foregroundStyle(.accent)
                             }
-                        } label: {
-                            Image(systemName: "quote.bubble")
-                                .foregroundStyle(.accent)
+                            Spacer()
                         }
                     }
                 }
